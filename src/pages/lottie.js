@@ -8,7 +8,7 @@ const LottiePage = () => {
           return (
             <LottiePlayer
               key={i}
-              src={"https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json"}
+              src={"/sample.json"}
               style={{
                 width: '200px',
                 height: '200px'

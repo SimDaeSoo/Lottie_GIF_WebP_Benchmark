@@ -53,7 +53,7 @@ const App = () => {
             <h2>{title}</h2>
           </Header>
 
-          <Content style={{ height: '100%', backgroundColor: '#303030' }}>
+          <Content style={{ height: '100%' }}>
             <Routes>
               <Route exact path="/" element={<LottiePage />} />
               <Route exact path="/gif" element={<GifPage />} />
