@@ -41,8 +41,8 @@ const App = () => {
             <Sidenav.Body>
               <Nav activeKey={location.pathname}>
                 <Nav.Item eventKey="/" icon={<MediaIcon />} onClick={() => moveTo('/')}>Lottie</Nav.Item>
-                <Nav.Item eventKey="#/gif" icon={<ImageIcon />} onClick={() => moveTo('#/gif')}>GIF</Nav.Item>
-                <Nav.Item eventKey="#/webp" icon={<ImageIcon />} onClick={() => moveTo('#/webp')}>WebP</Nav.Item>
+                <Nav.Item eventKey="/gif" icon={<ImageIcon />} onClick={() => moveTo('#/gif')}>GIF</Nav.Item>
+                <Nav.Item eventKey="/webp" icon={<ImageIcon />} onClick={() => moveTo('#/webp')}>WebP</Nav.Item>
               </Nav>
             </Sidenav.Body>
           </Sidenav>
