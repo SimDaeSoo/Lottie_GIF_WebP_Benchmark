@@ -7,7 +7,7 @@ const WebpPage = () => {
             <img
               key={i}
               alt=''
-              src={"/sample.webp"}
+              src={`/images/sample_${i}.webp`}
               style={{
                 width: '200px',
                 height: '200px'

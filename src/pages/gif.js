@@ -7,7 +7,7 @@ const GifPage = () => {
             <img
               key={i}
               alt=''
-              src={"/sample.gif"}
+              src={`/images/sample_${i}.gif`}
               style={{
                 width: '200px',
                 height: '200px'
