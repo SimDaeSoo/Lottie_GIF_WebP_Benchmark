@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import App from './App';
 import { CustomProvider } from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
@@ -20,11 +20,11 @@ requestAnimationFrame(update);
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <CustomProvider theme="dark">
         <App />
       </CustomProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
