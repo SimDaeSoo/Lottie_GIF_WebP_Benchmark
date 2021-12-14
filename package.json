@@ -12,6 +12,7 @@
     "react-router-dom": "^6.1.1",
     "react-scripts": "4.0.3",
     "rsuite": "^5.3.0",
+    "stats-js": "^1.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

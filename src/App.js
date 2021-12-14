@@ -22,10 +22,7 @@ const headerStyles = {
 const App = () => {
   const location = useLocation();
   const title = `${location.pathname.substring(1, location.pathname.length) || 'lottie'} performance benchmark page`;
-
-  const moveTo = (path) => {
-    window.location.href = path;
-  }
+  const moveTo = (path) => window.location.href = path;
 
   return (
     <div className="show-fake-browser sidebar-page" style={{ height: '100%' }}>
