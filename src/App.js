@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Container, Header, Content, Sidebar, Nav, Sidenav } from 'rsuite';
 import ToolsIcon from '@rsuite/icons/Tools';
 import ImageIcon from '@rsuite/icons/Image';
@@ -20,8 +20,12 @@ const headerStyles = {
 };
 
 const App = () => {
-  const [title, setTitle] = useState('Lottie Performance Benchmark');
-  const [path, setPath] = useState('lottie');
+  const location = useLocation();
+  const title = `${location.pathname.substring(1, location.pathname.length) || 'lottie'} performance benchmark page`;
+
+  const moveTo = (path) => {
+    window.location.href = path;
+  }
 
   return (
     <div className="show-fake-browser sidebar-page" style={{ height: '100%' }}>
@@ -38,10 +42,10 @@ const App = () => {
           </Sidenav.Header>
           <Sidenav appearance="subtle">
             <Sidenav.Body>
-              <Nav activeKey={path}>
-                <Nav.Item eventKey="lottie" icon={<MediaIcon />}>Lottie</Nav.Item>
-                <Nav.Item eventKey="gif" icon={<ImageIcon />}>GIF</Nav.Item>
-                <Nav.Item eventKey="webp" icon={<ImageIcon />}>WebP</Nav.Item>
+              <Nav activeKey={location.pathname}>
+                <Nav.Item eventKey="/" icon={<MediaIcon />} onClick={() => moveTo('/')}>Lottie</Nav.Item>
+                <Nav.Item eventKey="/gif" icon={<ImageIcon />} onClick={() => moveTo('/gif')}>GIF</Nav.Item>
+                <Nav.Item eventKey="/webp" icon={<ImageIcon />} onClick={() => moveTo('/webp')}>WebP</Nav.Item>
               </Nav>
             </Sidenav.Body>
           </Sidenav>
@@ -54,9 +58,9 @@ const App = () => {
 
           <Content style={{ height: '100%', backgroundColor: '#303030' }}>
             <Routes>
-              <Route exact path="lottie" element={<LottiePage />} />
-              <Route exact path="gif" element={<GifPage />} />
-              <Route exact path="webp" element={<WebpPage />} />
+              <Route exact path="/" element={<LottiePage />} />
+              <Route exact path="/gif" element={<GifPage />} />
+              <Route exact path="/webp" element={<WebpPage />} />
             </Routes>
           </Content>
         </Container>
